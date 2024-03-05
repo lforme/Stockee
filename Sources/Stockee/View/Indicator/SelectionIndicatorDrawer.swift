@@ -68,11 +68,14 @@ class SelectionIndicatorDrawer<Input: Quote> {
             linePath.addHLine(minX: x, maxX: x + width, y: position.y)
         }
         linePath.addVLine(minY: 0, maxY: height, x: position.x)
+        let dashPattern: [NSNumber] = [2, 2]
+        lineLayer.lineDashPattern = dashPattern
+        lineLayer.lineJoin = .round
         lineLayer.path = linePath
         lineLayer.strokeColor = style.selectionIndicatorLineColor.cgColor
         pointLayer.isHidden = !showHorizontal
         if showHorizontal {
-            let rect = CGRect(origin: position, size: .zero).insetBy(dx: -3, dy: -3)
+            let rect = CGRect(origin: position, size: .zero).insetBy(dx: -2, dy: -2)
             pointLayer.path = CGPath(ellipseIn: rect, transform: nil)
             pointLayer.fillColor = style.selectionIndicatorPointColor.cgColor
             pointLayer.strokeColor = style.selectionIndicatorPointColor
