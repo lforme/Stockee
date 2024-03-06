@@ -73,6 +73,11 @@ public extension RendererContext {
         return height - height * (value - extremePoint.min) / peak + minY
     }
 
+    /// 获取最新一根k线的x坐标
+    func xOffsetFetchLatestQuote() -> CGFloat {
+        return layout.quoteMinX(at: data.count - 1)
+    }
+    
     func value(forY y: CGFloat) -> CGFloat {
         let peak = extremePoint.max - extremePoint.min
         let height = contentRect.height
