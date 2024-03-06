@@ -62,7 +62,7 @@ public extension RendererContext {
     }
 }
 
-extension RendererContext {
+public extension RendererContext {
     /// 获取某个 Y 坐标的值在图表中 y 的偏移量
     /// - Parameter value: Y 值
     /// - Returns: 偏移量
