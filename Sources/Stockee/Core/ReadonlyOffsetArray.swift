@@ -52,14 +52,14 @@ public struct ReadonlyOffsetArray<Element> {
 }
 
 extension ReadonlyOffsetArray {
-    func realRange(for range: Range<Int>) -> Range<Int> {
+    public func realRange(for range: Range<Int>) -> Range<Int> {
         ((range.lowerBound - offset)..<(range.upperBound - offset))
             .clamped(to: storage.startIndex..<storage.endIndex)
     }
 }
 
 extension ReadonlyOffsetArray {
-    func sliceAndRange(for range: Range<Int>) -> (ArraySlice<Element>, Range<Int>) {
+    public func sliceAndRange(for range: Range<Int>) -> (ArraySlice<Element>, Range<Int>) {
         let realRange = realRange(for: range)
         return (storage[realRange], realRange.startIndex + offset ..< realRange.endIndex + offset)
     }
