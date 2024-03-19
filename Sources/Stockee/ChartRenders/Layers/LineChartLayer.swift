@@ -58,7 +58,7 @@ public final class LineChartLayer: ShapeLayer {
 }
 
 extension LineChartLayer {
-    func update<Input: Quote>(with context: RendererContext<Input>,
+    public func update<Input: Quote>(with context: RendererContext<Input>,
                               indicatorValues: ReadonlyOffsetArray<CGFloat>,
                               color: UIColor) {
         update(with: context,
