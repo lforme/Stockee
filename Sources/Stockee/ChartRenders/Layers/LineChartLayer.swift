@@ -87,7 +87,7 @@ extension LineChartLayer {
 }
 
 extension LineChartLayer {
-    func update<Input: Quote, V>(with context: RendererContext<Input>,
+    public func update<Input: Quote, V>(with context: RendererContext<Input>,
                                  indicatorValues: ReadonlyOffsetArray<V>,
                                  keyPath: KeyPath<V, CGFloat>,
                                  color: UIColor) {
@@ -109,7 +109,7 @@ extension LineChartLayer {
 }
 
 extension LineChartLayer {
-    func update<Input: Quote, V>(with context: RendererContext<Input>,
+    public func update<Input: Quote, V>(with context: RendererContext<Input>,
                                  indicatorValues: ReadonlyOffsetArray<V>,
                                  keyPath: KeyPath<V, CGFloat?>,
                                  color: UIColor) {
