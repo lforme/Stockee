@@ -78,7 +78,7 @@ public struct DefaultVolumeFormatter: NumberFormatting {
             value /= 1000
             unit = units.removeFirst()
         }
-        let formatter = DefaultPriceFormatter(significantDigits: 2, minimumFractionDigits: 1)
+        let formatter = DefaultPriceFormatter(significantDigits: 2, minimumFractionDigits: 2)
         return "\(formatter.format(value))\(unit)"
     }
 }
